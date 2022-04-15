@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<style>
+    body{
+        background-color: aqua;
+    }
+
+    #firstname,#lastname,#date-of-birth,#tuition-fees,#fname,#lname{
+        background-color: antiquewhite;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <header class=" jumbotron text-center">
+
+
+            <h1>PeopleCert</h1>
+            <p>Assigment 1</p>
+            <h2>Student</h2>
+        </header>
+
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <!--NavBar-->
+            <a class="navbar-nav" href="">Nav</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="'collapse" data-target="collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Home.html">Home</a>
+
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Students.html">Students</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Trainer.html">Trainer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Project.html">Assigment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="Course.html">Course</a>
+                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="Trainers per Course.html">Trainers Per Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="Students per Course.html">StudentsPer Courses</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="Assignment per Course.html">Assignment per Course</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="Assignments per Studen per Course.html">Assignment per Student per Course</a>
+                        </li>
+                </ul>
+        </nav>
+        <!--End of NavBar-->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5 offset-lg-1 my-5">
+                    <p class="bg-primary"><strong>Please fill the form below:</strong></p>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="name">First Name:</label>
+                            <input type="text" class="form-control" id="firstname" required>
+                            <div class="alert alert-danger" id="firstname-error">Success or Failure</div>
+                    
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name:</label>
+                            <input type="text" class="form-control" id="lastname" required>
+                            <div class="alert alert-danger" id="lastname-error">Success or Failure</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date-of-birth">Date of Birth:</label>
+                            <input type="date" class="form-control" id="date-of-birth" name="date of birth"
+                                value="1988-4-23">
+                                <div class="alert alert-danger" id="date-of-birth-error">Success or Failure</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tuition-fees">Tuition Fees:</label>
+                            <input type="number" class="form-control" id="tuition-fees" name="tuition fees" min="1"
+                                required>
+                                <div class="alert alert-danger" id="tuition-fees-error">Success or Failure</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+                <!--Second From-->
+                <div class="col-lg-5 offset-lg-1 my-5">
+                    <p class="bg-primary"><strong>Please fill the form below:</strong></p>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="name">First Name:</label>
+                            <input type="text" class="form-control" id="fname" value="Dimitris" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fname">Last Name:</label>
+                            <input type="text" class="form-control" id="lname" value="Xatzidakis" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date-of-birth">Date of Birth:</label>
+                            <input type="date" class="form-control" id="date-of-birth" name="date-of-birth"
+                                value="2001-05-7">
+                        </div>
+                        <div class="form-group">
+                            <label for="tuition-fees">Tuition Fees:</label>
+                            <input type="number" class="form-control" id="tuition-fees" name="tuition fees" min="1"
+                                value="350" required>
+                        </div>
+                        <button type="Edit" class="btn btn-primary">Edit</button>
+
+                    </form>
+                </div>
+            </div><!--/div for row-->
+        </div><!--/div for container-->
+            <footer class="jumbotron text-center">
+
+                <p> &copy; Moutzouris Solutions</p>
+            </footer>
+            <script>
+            $(document).ready(function() {
+                $('#firstname-error').hide();
+                $('#lastname-error').hide();
+                $('#date-of-birth-error').hide();
+                $('#tuition-fees-error').hide();
+
+                var error_fname = "";
+                var error_lname = "";
+                var error_tuitionFees='';
+
+                $('#firstname').focusout(function(){
+                      checkFirstName();
+                });
+
+                $("#lastname").focusout(function(){
+                    checkLastName();
+
+                });
+
+                $('#tuition-fees').focusout(function(){
+                    checkTuitionFees();
+
+                });
+
+
+                function checkFirstName() {
+                 var pattern= /^[a-zA-Z]*$/;
+                 var firstName=$('#firstname').val();
+                 //console.log(firstName);
+
+                 if(pattern.test(firstName) && firstName!==''){
+                     $('#firstname-error').hide();
+                     $('#firstname').css({"border-bottom": "3px solid #34f458"});
+
+                 }
+                 else{
+                     $('#firstname-error').show().html("Should contain only characters!");
+                     error_fname='true';
+                 }
+
+                }
+
+                function checkLastName(){
+                    var pattern= /^[a-zA-Z]*$/;
+                    var lastName=$('#lastname').val();
+                    //console.log(lastName);
+
+
+                    if(pattern.test(lastName) && lastName!==''){
+                        $('#lastname-error').hide();
+                        $('#lastname').css({"border-bottom": "3px solid #34f458"});
+                    }
+                    else{
+                        $('#lastname-error').show().html("Should contain only characters!");
+                        error_lname='true';
+                    }
+                }
+
+
+                function checkTuitionFees(){
+                    var tuitionFees=$('#tuition-fees').val();
+                    //console.log(tuitionFees);
+                    if(tuitionFees>1 && tuitionFees<350){
+                        $('#tuition-fees-error').hide();
+                        $('#tuition-fees').css({"border-bottom" : "3px solid #34f458"});
+                    }
+                
+                else {
+                    $('#tuition-fees-error').show().html("Enter amount between [1-350]");
+                    error_tuitionFees='true';
+                }
+                }
+
+
+            });
+            </script>
+</body>
+
+</html>

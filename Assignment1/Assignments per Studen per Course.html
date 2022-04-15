@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+        body{
+            background-color: aqua;
+        }
+        #firstname,#lastname,#firstname1,#lastname1,#title,#description,#total-mark,#oral-mark,#dateOfSub{
+            background-color: antiquewhite;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <header class=" jumbotron text-center">
+
+
+            <h1>PeopleCert</h1>
+            <p>Assigment 1</p>
+            <h2>Assignment per Course</h2>
+        </header>
+
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <!--NavBar-->
+            <a class="navbar-nav" href="">Nav</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="'collapse" data-target="collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Home.html">Home</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Students.html">Students</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Trainer.html">Trainer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Project.html">Assigment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="course.html">Course</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="Trainers per Courses.html">Trainers Per Courses</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="Students per Course.html">Students Per Courses</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="Assignment per Course.html">Assignment per Course</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link " href="Assignments per Studen per Course.html">Assignment per Student per Course</a>
+                    </li>
+                </ul>
+        </nav> <!--End of Nav-->
+
+        <div container class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <p class="bg-primary"><strong>Please fill the form below:</strong></p>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="name">First Name:</label>
+                            <input type="text" class="form-control" id="firstname" required>
+                            <div class="alert alert-danger" id="firstname-error">Wrong name</div>
+                            <div class="alert alert-success" id="firstname-success">Correct name</div>
+
+                    
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name:</label>
+                            <input type="text" class="form-control" id="lastname" required>
+                            <div class="alert alert-danger" id="lastname-error">Wrong name</div>
+                            <div class="alert alert-success" id="lastname-success">Correct Last name</div>
+                        </div>
+                    </form>
+                </div>        
+                <div class="col-lg-3">
+                    <p class="bg-primary">
+                        <stromg>Select Course for Assignment</stromg>
+                    <fieldset>
+                        <legend>Enter choice</legend>
+                    </p>
+                    <div class="radio">
+                        <label><input type="radio" name="course1" >Java</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="course2" >JavaScript</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="course1" >C#</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="course1" >Python</label>
+                    </div>
+                  </fieldset>
+                </div>  
+
+                <div class="col-lg-6">
+                    <p class="bg-primary"><strong>Add new Assignment</strong></p>
+                        <form action="">
+                            <div class="form-group">
+                                <label for="name">Title:</label>
+                                <input type="text" class="form-control" id="title" required>
+                                <div class="form-group">
+                                    <label for="description">Description:</label>
+                                    <textarea class="form-control" row="5" id="description"></textarea>
+                                    <div class="form-group">
+                                        <label for="oralMark">oralMark(%):</label>
+                                        <input type="number" class="form-control" id="oral-mark" name="oral-mark"
+                                            min="1" max="20" required>
+                                            <div class="alert alert-danger" id="oralmark-error">The Oral Mark Should be [1-20]!</div>
+                                            <div class="alert alert-success" id="oralmark-success">Correct Oral Mark!</div>
+                
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="oralMark">totalMark(%):</label>
+                                        <input type="number" class="form-control" id="total-mark" name="total-mark"
+                                            min="20" max="80" required>
+                                            <div class="alert alert-danger" id="totalmark-error">The total mark should be [20-80]</div>
+                                            <div class="alert alert-success" id="totalmark-success">Correct Total Mark</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subDateTime">subDateTime:</label>
+                                        <input type="date" class="form-control" id="dateOfSub" name="date-of-sub">
+                                    </div>
+                                    <div class="form-group">
+                                    <input type="range" class="form-control-range" id="upload-file">
+                                    <input type="file" class="form-control-file border" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div><!--row -->
+        </div><!--container-->
+
+        <!--##############################################################################################################################################################-->
+
+
+        <div container class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <p class="bg-primary"><strong>Edit new Assignment</strong></p>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="name">First Name:</label>
+                            <input type="text" class="form-control" id="firstname1" required value="Ioannis">
+                            <div class="alert alert-danger" id="firstname1-error">Success or Failure</div>
+                            <div class="alert alert-success" id="firstname1-success"></div>
+                    
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name:</label>
+                            <input type="text" class="form-control" id="lastname1" required value="Papadopoulos">
+                            <div class="alert alert-danger1" id="lastname1-error">Success or Failure</div>
+                            <div class="alert alert-success" id="lastname1-success"></div>
+                    
+                        </div>
+                    </form>
+                </div>        
+                <div class="col-lg-3">
+                    <p class="bg-primary">
+                        <stromg>Select Course for Assignment</stromg>
+                    <fieldset>
+                        <legend>Enter choice</legend>
+                    </p>
+                    <div class="radio">
+                        <label><input type="radio" name="course1" >Java</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="course2" checked >JavaScript</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="course3" >C#</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="course4" >Python</label>
+                    </div>
+                  </fieldset>
+                </div>  
+
+                <div class="col-lg-6">
+                    <p class="bg-primary"><strong>Add new Assignment</strong></p>
+                        <form action="">
+                            <div class="form-group">
+                                <label for="name">Title:</label>
+                                <input type="text" class="form-control" id="title" required value="CB16">
+                                <div class="form-group">
+                                    <label for="description">Description:</label>
+                                    <textarea class="form-control" row="5" id="description" >object-oriented programming language</textarea>
+                                    <div class="form-group">
+                                        <label for="oralMark">oralMark(%):</label>
+                                        <input type="number" class="form-control" id="oral-mark" name="oral-mark"
+                                            min="1" max="20" required value="13">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="oralMark">totalMark(%):</label>
+                                        <input type="number" class="form-control" id="total-mark" name="total-mark"
+                                            min="20" max="80" required value="65">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subDateTime">subDateTime:</label>
+                                        <input type="date" class="form-control" id="dateOfSub" name="date-of-sub" value="2022-05-21">
+                                    </div>
+                                    <div class="form-group">
+                                    <input type="range" class="form-control-range" id="upload-file">
+                                    <input type="file" class="form-control-file border" required>
+                                    </div>
+                                </div>
+                                <button type="Edit" class="btn btn-primary">Edit</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div><!--row -->
+        </div><!--container-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <footer class="jumbotron text-center">
+
+            <p> &copy; Moutzouris Solutions</p>
+        </footer>
+        <script>
+            $(document).ready(function(){
+            $('#firstname-error').hide();
+            $('#lastname-error').hide();
+            $('#firstname-success').hide();
+            $('#lastname-success').hide();
+            $('#oralmark-error').hide();
+            $('#totalmark-error').hide();
+            $('#oralmark-success').hide();
+            $('#totalmark-success').hide();
+
+            $('#firstname').focusout(function(){
+                checkFirstName();
+            });
+
+            $('#lastname').focusout(function(){
+                checkLastName();
+
+            });
+
+
+            function checkFirstName(){
+                var pattern=/^[a-zA-Z]*$/;
+                var firstName=$('#firstname').val();
+                //console.log(firstName);
+
+                if(pattern.test(firstName) && firstName!=''){
+                    $('#lastname-error').hide();
+                    $('#firstname-success').show();
+
+                }
+                else{
+                    $('#firstname-error').show();
+                    $('#firstname-success').hide();
+
+                }
+            }
+
+            function checkLastName(){
+                var pattern=/^[a-zA-Z]*$/;
+                var lastName=$('#lastname').val();
+                //console.log(lastName);
+
+
+                if(pattern.test(lastName) && lastName!=''){
+                    $('#lastname-error').hide();
+                    $('#lastname-success').show();
+                }
+                else{
+                    $('#lastname-error').show();
+                    $('#lastname-success').hide();
+                }
+            }
+            });
+            //End Validatin for add form
+            $(document).ready(function(){
+            $('#firstname1-error').hide();
+            $('#lastname1-error').hide();
+            $('#firstname1-success').hide();
+            $('#lastname1-success').hide();
+
+            $('#firstname1').focusout(function(){
+                checkFirstName();
+            });
+
+            $('#lastname1').focusout(function(){
+                checkLastName();
+
+            });
+            $('#oral-mark').focusout(function(){
+                    checkOralMark();
+
+                });
+            $('#total-mark').focusout(function(){
+                    checkTotalMark();
+                });    
+
+
+            function checkFirstName(){
+                var pattern=/^[a-zA-Z]*$/;
+                var firstName1=$('#firstname1').val();
+                //console.log(firstName);
+
+                if(pattern.test(firstName1) && firstName1!=''){
+                    $('#lastname1-error').hide();
+                    $('#firstname1-success').show();
+
+                }
+                else{
+                    $('#firstname1-error').show();
+                    $('#firstname1-success').hide();
+
+                }
+            }
+
+            function checkLastName(){
+                var pattern=/^[a-zA-Z]*$/;
+                var lastName1=$('#lastname').val();
+                //console.log(lastName);
+
+
+                if(pattern.test(lastName1) && lastName1!=''){
+                    $('#lastname1-error').hide();
+                    $('#lastname1-success').show();
+                }
+                else{
+                    $('#lastname1-error').show();
+                    $('#lastname1-success').hide();
+                }
+            }
+            function checkOralMark(){
+                    
+                    var oralMark=$('#oral-mark').val();
+                    console.log(oralMark);
+
+                    if(oralMark<=20 && oralMark>=1){
+                        $('#oralmark-success').show();
+                        $('#oralmark-error').hide();
+
+                    }
+                    else{
+                        $('#oralmark-error').show();
+                        $('#oralmark-success').hide();
+                    }
+                }
+
+               
+
+                function checkTotalMark(){
+                    
+                    var totalMark=$('#total-mark').val();
+                    console.log(totalMark);
+
+                    if(totalMark>20 && totalMark<=80){
+                        $('#totalmark-success').show();
+                        $('#totalmark-error').hide();
+
+                    }
+                    else{
+                        $('#totalmark-error').show();
+                        $('#totalmark-success').hide();
+                    }
+                }
+                    
+                
+            });
+        </script>
+    
+</body>
+</html>
